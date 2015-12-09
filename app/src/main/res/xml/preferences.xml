@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="preferences_category_what_to_log"
+        android:title="What to log">
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="CAN_LOG_ACCELEROMETER"
+            android:summary="monitor and log accelerometer data"
+            android:title="Accelerometer"
+            />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="CAN_LOG_LOCATION"
+            android:summary="monitor and log location using GPS or Network providers"
+            android:title="Location"
+            />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="CAN_LOG_MISC_SENSORS"
+            android:summary="monitor and log miscellaneous sensor such as proximity, light, etc..."
+            android:title="Misc. Sensors"
+            />
+
+        <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                          xmlns:embedonix="http://embedonix.com"
+                          android:key="sensors_settings"
+                          android:summary="you can change settings for individual sensors here"
+                          android:title="Sensors Settings...">
+
+            <PreferenceCategory
+                android:key="preferences_accelerometer_settings"
+                android:title="Accelerometer">
+
+                <ListPreference
+                    android:defaultValue="normal"
+                    android:entries="@array/accelerometer_speeds_items"
+                    android:entryValues="@array/accelerometer_speeds_items"
+                    android:key="ACCELEROMETER_SPEED"
+                    android:persistent="true"
+                    android:summary="select the speed that accelerometer values should be monitored. there is no fixed number because of Android implementation of accelerometer hardware."
+                    android:title="Accelerometer Speed"/>
+
+                <com.embedonix.pslogger.widgets.SeekBarPreference
+                    android:defaultValue="50"
+                    android:key="ACC_GRAPH_VIEWPORT"
+                    android:max="800"
+                    android:summary="choose how much of the accelerometer data should be visible in the graph. you can always change this dynamically by sweeping out or in with two fingers on the graph itself."
+                    android:title="Accelerometer Viewport"
+                    embedonix:min="20"
+                    embedonix:unitsLeft=""
+                    embedonix:unitsRight=""
+                    />
+
+            </PreferenceCategory>
+
+            <PreferenceCategory
+                android:key="preferences_location_settings"
+                android:title="Location">
+
+                <ListPreference
+                    android:defaultValue="gps"
+                    android:entries="@array/default_location_providers_items"
+                    android:entryValues="@array/default_location_providers_values"
+                    android:key="DEFAULT_LOCATION_PROVIDER"
+                    android:summary="select the default location provider. you can change this also dynamically in the app screen"
+                    android:title="Location Provider"/>
+
+
+            </PreferenceCategory>
+
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="preferences_category_app_settings"
+        android:title="Logging Settings">
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="BACKGROUND_LOGGING_SERVICE"
+            android:summary="allows logging in background if the app goes in background or its process is terminated"
+            android:title="Background Logging"
+            />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="CAN_UPLOAD"
+            android:summary="allow logged data to be uploaded to server immediately after being created , if disabled, you need upload the files from the main app screen in upload queue box"
+            android:title="Enable upload"
+            />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="CAN_USE_MOBILE_NETWORK"
+            android:summary="allows uploading of logged files using mobile (sim) network"
+            android:title="Mobile network"
+            />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="CAN_UPLOAD_AFTER_RECONNECT"
+            android:title="Auto Upload Queue"
+            android:summary="if enabled, any time that your device connects to internet, queued files will be automatically uploaded"/>
+
+        <PreferenceScreen
+            android:key="log_file_settings"
+            android:summary="set options regarding log files"
+            android:title="File Settings...">
+
+            <PreferenceCategory
+                android:key="cat_file_headers"
+                android:title="Log File Settings">
+
+                <SwitchPreference
+                    android:defaultValue="true"
+                    android:key="USE_SUB_FOLDERS"
+                    android:title="Daily folders"
+                    android:summary="if enabled, the log files of each day will be saved in sub folders representing year, month and day"/>
+
+                <SwitchPreference
+                    android:defaultValue="true"
+                    android:key="INSERT_DETAILED_DESCRIPTION"
+                    android:summary="enable to put detailed description on top of each log file. information like available sensors and how to parse log files will be inserted in each individual file"
+                    android:title="Insert Description"/>
+
+                <SwitchPreference
+                    android:defaultValue="true"
+                    android:key="INSERT_GUIDE_COLUMN"
+                    android:summary="enable to put a line explaining each column of CVS file before actual data"
+                    android:title="Insert Guide Column"/>
+
+                <SwitchPreference
+                    android:defaultValue="false"
+                    android:key="LOCAL_COMPRESS_LOG_FILES"
+                    android:summary="enable to compress (gzip) log files before saving on device storage"
+                    android:title="Compress Log Files"/>
+
+                <SwitchPreference
+                    android:defaultValue="true"
+                    android:key="DELETE_FILES_AFTER_UPLOAD"
+                    android:summary="delete log files after successful uploading to server"
+                    android:title="Delete logs"
+                    />
+
+            </PreferenceCategory>
+
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="app_related"
+        android:title="@string/app_name">
+
+        <Preference android:title="@string/prefs_about_app">
+            <intent android:action="com.embedonix.sensorlogger.action.SHOW_ABOUT_DIALOG"/>
+        </Preference>
+        <Preference android:title="@string/prefs_web_page">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://ps.ewi.utwente.nl/"/>
+        </Preference>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,78 @@
+<ScrollView
+    android:id="@+id/mainActivityMainScrollView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="register"
+                    android:id="@+id/mainActButtonRegistration"/>
+            </LinearLayout>
+
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/mainFragmentContainer">
+
+                <!-- fragments go here -->
+
+
+                <fragment
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:name="com.embedonix.pslogger.fragments.AccelerometerFragment"
+                    android:id="@+id/fragment_accelerometer"
+                    tools:layout="@layout/fragment_accelerometer"/>
+
+                <fragment
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:name="com.embedonix.pslogger.fragments.LocationFragment"
+                    android:id="@+id/fragment_location"
+                    tools:layout="@layout/fragment_location"/>
+
+                <fragment
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:name="com.embedonix.pslogger.fragments.MiscSensorsFragment"
+                    android:id="@+id/fragment_miscsensors"
+                    tools:layout="@layout/fragment_miscsensors"/>
+
+                <fragment
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:name="com.embedonix.pslogger.fragments.UploadQueueFragment"
+                    android:id="@+id/fragment_upload_queue"
+                    tools:layout="@layout/fragment_upload_queue"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

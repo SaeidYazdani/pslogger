@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        saeid {
+            keyAlias 'saeid'
+            keyPassword '17701827'
+            storeFile file('D:/Dropbox/Personal_Projects/AndroidKey/saeid.jks')
+            storePassword '17701827'
+        }
+    }
+    compileSdkVersion 20
+    buildToolsVersion '20.0.0'
+    defaultConfig {
+        applicationId 'com.embedonix.pslogger'
+        minSdkVersion 16
+        targetSdkVersion 20
+        versionCode 12
+        versionName '1.2'
+        signingConfig signingConfigs.saeid
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.saeid
+        }
+        debug {
+            signingConfig signingConfigs.saeid
+        }
+    }
+
+    productFlavors {
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':imagecrop')
+    compile 'joda-time:joda-time:2.3'
+}

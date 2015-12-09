@@ -1,0 +1,133 @@
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_above="@+id/linearLayout"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='Please provide us with some basic registration details. Your (full) name, a username of your choice, a password and an email address is all we need in this step!'
+                    android:singleLine="false"
+                    android:textSize="14dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"/>
+
+                <com.embedonix.pslogger.widgets.ExtendedEditText
+                    android:id="@+id/regWizTwoFullName"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="your full name (optional)"
+                    android:inputType="textFilter"
+                    android:layout_margin="5dp"/>
+
+                <com.embedonix.pslogger.widgets.ExtendedEditText
+                    android:id="@+id/regWizTwoUserName"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="your desired username"
+                    android:inputType="textFilter"
+                    android:layout_margin="5dp"/>
+
+                <com.embedonix.pslogger.widgets.ExtendedEditText
+                    android:id="@+id/regWizTwoPass"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="password"
+                    android:inputType="textPassword"
+                    android:layout_margin="5dp"/>
+
+                <com.embedonix.pslogger.widgets.ExtendedEditText
+                    android:id="@+id/regWizTwoPassRepeat"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="repeat password"
+                    android:inputType="textPassword"
+                    android:layout_margin="5dp"/>
+
+                <com.embedonix.pslogger.widgets.ExtendedEditText
+                    android:id="@+id/regWizTwoEmail"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="email@provider.com (optional)"
+                    android:inputType="textEmailAddress"
+                    android:layout_margin="5dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayout"
+        android:layout_alignParentEnd="false">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="back"
+            android:id="@+id/regWizTwoButtonBack"
+            android:background="@drawable/button_left_arrow_enable"
+            android:layout_weight="5"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="bottom"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="next"
+            android:id="@+id/regWizTwoButtonNext"
+            android:background="@drawable/button_right_arrow_disable"
+            android:layout_weight="5"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="bottom"/>
+
+
+    </LinearLayout>
+</RelativeLayout>

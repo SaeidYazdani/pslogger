@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="accelerometer_speeds_items">
+        <item>slow</item>
+        <item>normal</item>
+        <item>fast</item>
+        <item>fastest</item>
+    </string-array>
+    <string-array name="accelerometer_speeds_values">
+        <item>3</item>
+        <item>2</item>
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+
+    <string-array name="default_location_providers_items">
+        <item>gps</item>
+        <item>network</item>
+        <item>passive</item>
+    </string-array>
+    <string-array name="default_location_providers_values">
+        <item>gps</item>
+        <item>network</item>
+        <item>passive</item>
+    </string-array>
+</resources>

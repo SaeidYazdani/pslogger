@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PS Logger</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="dialog_server_config_desc">please enter the URL of the upload handler server</string>
+    <string name="dialog_server_note">please do not forget to put the trailing slash. example:\n\n\thttp://www.domain.com/logger/</string>
+    <string name="dialog_server_default_url">http://www.embedonix.com/apps/pslogger/</string>
+    <string name="toggle_visibility">toggle visibility</string>
+    <string name="accelerometer_monitor">Accelerometer Monitor</string>
+    <string name="check_box_acceleration">acceleration</string>
+    <string name="check_box_axis_z">z</string>
+    <string name="check_box_axis_y">y</string>
+    <string name="check_box_axis_x">x</string>
+    <string name="location_monitor">Location Monitor</string>
+    <string name="miscellaneous_sensors">Misc. Sensors</string>
+    <string name="registration_agreement">PS Logger is an application to log various sensor data and geographic location of mobile phones.  The logged data is only intended to be used for scientific and educational purposes by University Twente. No part of your personal information or logged data will be shared or used with any third parties, as sole purpose of this application is, as stated, scientific studies and educational purposes. If you agree to contribute to the stated use-cases, please continue with registration by checking the agreement check box below:</string>
+    <string name="action_toggle_logging">Toggle Logging</string>
+    <string name="action_start_title_condensed">Toggle</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_login">Login</string>
+    <string name="action_show_help_activity">Help</string>
+    <string name="action_show_about_dialog">About</string>
+    <string name="title_activity_show_about_app">About</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="about_app_title">about</string>
+    <string name="prefs_about_app">About</string>
+    <string name="prefs_web_page">Visit our website</string>
+    <string name="upload_queue">fragment title</string>
+
+</resources>

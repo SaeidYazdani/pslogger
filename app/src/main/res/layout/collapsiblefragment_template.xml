@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <!--
+    Created by Saeid 20-8-2014
+    This is a template to make more fragments.
+    Colors should be changed accordingly.
+    the prefix 'id' tags should be renamed, e.g. replacing 'temp' with the new fragment prefix
+    the fragment should override the setupView() method of CollapsibleFragment base class
+    look for other examples in the 'fragments' package.
+
+    Good luck who ever works on this after I leave :P I tried to make it simple!
+
+    -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="5dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#ff128b13"
+            android:id="@+id/tempHeader">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tempToggleVisibility"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:contentDescription="@string/toggle_visibility"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="fragment title"
+                android:id="@+id/tempTitle"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ff128b13"
+            android:padding="2dp"
+            android:id="@+id/tempContainer">
+
+            <!-- START CONTENT -->
+
+
+
+
+            <!-- END CONTENT-->
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="250dp"
+                android:background="#ff000000">
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
